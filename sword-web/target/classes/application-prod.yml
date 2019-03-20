@@ -1,0 +1,16 @@
+server:
+  port: 8081
+mybatis:
+  type-aliases-package: com.tydic.collector.domain
+spring:
+  #数据源连接池默认使用的是Tomcat JDBC Connection Pool
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: root
+    tomcat:
+      min-idle: 1
+      initial-size: 1
+      max-active: 20
+      max-idle: 20

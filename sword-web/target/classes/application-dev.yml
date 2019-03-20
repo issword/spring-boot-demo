@@ -1,0 +1,21 @@
+server:
+  #资产管控后台服务端口号
+  port: 7070
+spring:
+  #数据源连接池默认使用的是Tomcat JDBC Connection Pool
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sword_man?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+    tomcat:
+      min-idle: 1
+      initial-size: 1
+      max-active: 20
+      max-idle: 20
+
+#自定义属性
+commonProperties:
+  #资产管控系统id（管理中心获取）
+  sysId: 103
+  key: tydic

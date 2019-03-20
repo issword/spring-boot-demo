@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sword.man.user.mapper.SwordUserMapper">
+
+	<resultMap id="BaseResultMap" type="com.sword.man.user.entity.SwordUser">
+		<result column="USER_ID" property="userId" jdbcType="VARCHAR"></result>
+		<result column="USER_NAME" property="userName" jdbcType="VARCHAR"></result>
+		<result column="LOGIN_NAME" property="loginName" jdbcType="VARCHAR"></result>
+		<result column="PASSWORD" property="password" jdbcType="VARCHAR"></result>
+	</resultMap>
+	
+	<select id="queryUserList" resultType="java.util.Map">
+		select * from sword_user
+	</select>
+	
+	<select id="queryUserInfo" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select * from sword_user where login_name = #{loginName}
+	</select>
+
+</mapper>

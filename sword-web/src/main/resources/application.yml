@@ -1,0 +1,18 @@
+#定义contextPath，即项目根目录
+server:
+  context-path: /sword-man
+spring:
+  #spring读取不同环境的配置文件（例如application-dev.yml,下面只要配置后缀为dev即可）
+  profiles:
+    active: dev
+#分页组件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+#mybatis配置
+mybatis:
+  #配置类型别名
+  type-aliases-package: com.sword.man.*.entity
+  #配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapper-locations: classpath:mapper/*.xml,mapper/*/*.xml
